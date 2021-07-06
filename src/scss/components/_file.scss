@@ -1,0 +1,39 @@
+@import '../abstracts';
+
+.file {
+    @include size(calc(100% - 4em));
+    min-width: fit-content;
+    padding: 1em;
+    margin: 1em;
+    cursor: pointer;
+
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-auto-rows: 1fr; 
+    grid-template-columns: 1fr 2fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "file__icon file__details file__size";
+
+    &__icon { 
+        grid-area: file__icon;
+        @include flex();
+        margin-right: 5px;
+    }
+
+    &__details { 
+        grid-area: file__details;
+        margin-right: 5px;
+
+        &__name {
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+    }
+
+    &__size { 
+        grid-area: file__size; 
+        @include flex();
+    }
+}

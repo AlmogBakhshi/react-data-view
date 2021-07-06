@@ -1,0 +1,17 @@
+@import '../abstracts';
+
+.files {
+    @include size(30%, 100%);
+
+    @media only screen and (max-width: 600px) {
+        width: 100% !important;
+    }
+
+    @media only screen and (min-width: 600px) {
+        width: 50% !important;
+    }
+
+    @media only screen and (min-width: 768px) {
+        max-width: 500px;
+    }
+}
