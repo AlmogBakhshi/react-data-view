@@ -1,0 +1,30 @@
+.dialog {
+
+    &__header {
+        margin: 0;
+        padding: 0;
+
+        button {
+            position: absolute;
+            top: 0.3em;
+            right: 2px;
+        }
+    }
+
+    iframe {
+        @include size(100%, 99%);
+        border: 0;
+    }
+
+    img {
+        @include size(100%, auto);
+    }
+
+    &[data-pdf=true] > * > * {
+        @include size(100%, 100%);
+    }
+
+    &[data-video=true] > * > * {
+        @include size(50%, 50%);
+    }
+}

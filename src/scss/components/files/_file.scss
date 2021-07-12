@@ -1,5 +1,3 @@
-@import '../abstracts';
-
 .file {
     @include size(calc(100% - 4em));
     min-width: fit-content;

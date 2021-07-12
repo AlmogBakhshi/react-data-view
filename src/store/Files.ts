@@ -1,4 +1,11 @@
 import { makeAutoObservable } from 'mobx';
+import * as fetch from '../fetch';
+
+export enum FileType {
+    Image = 'image',
+    Video = 'video',
+    PDF = 'pdf'
+}
 
 export interface IFile {
     mime: string,
@@ -28,16 +35,7 @@ class Files {
     }
 
     fetchFiles = () => {
-        // const files = [
-        //     { mime: 'video/mp4', size: 1920619, created: '2021-06-29T14:45:50.5382', name: 'balloons.mp4', length: 19.522 },
-        //     { mime: 'image/jpeg', size: 781963, created: '2021-06-15T14:45:50.5382', name: 'cat.jpg', height: 2720, width: 4106 },
-        //     { mime: 'application/pdf', size: 3028, created: '2021-06-29T14:45:50.5382', name: 'sample.pdf', pages: 2 },
-        // ];
-
-        // this.setFiles(files);
-
-        fetch(`https://mighty-sierra-05836.herokuapp.com/files`)
-            .then(res => res.json())
+        fetch.Get('files')
             .then(res => this.setFiles(res.files))
             .catch(err => console.error(err))
     }
